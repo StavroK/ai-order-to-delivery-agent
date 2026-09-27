@@ -1,0 +1,25 @@
+[
+  {
+    "orderNumber": "TVC-483921",
+    "customer": "Mariana López",
+    "date": "2026-09-22",
+    "items": ["Samsung 27-inch monitor", "Wireless keyboard"],
+    "payment": "Confirmed",
+    "mode": "pickup",
+    "store": "Monterrey Centro",
+    "fulfillment": "Preparing",
+    "invoice": "Generated"
+  },
+  {
+    "orderNumber": "TVC-392187",
+    "customer": "Carlos Rivera",
+    "date": "2026-09-20",
+    "items": ["Lenovo ThinkPad dock", "HDMI cable x2"],
+    "payment": "Confirmed",
+    "mode": "delivery",
+    "carrier": "Estafeta",
+    "shipment": "In transit",
+    "eta": "2026-09-29",
+    "invoice": "Generated"
+  }
+]
