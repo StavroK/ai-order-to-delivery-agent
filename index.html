@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio demo: governed AI customer service agent for order-to-delivery operations." />
+  <title>AI Order-to-Delivery Agent | Portfolio Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">PORTFOLIO DEMO · SENIOR IT / AI PROJECT MANAGEMENT</div>
+      <h1>AI Customer Service Agent</h1>
+      <p>Order-to-Delivery Operations · Target: ~4 days → same-day resolution</p>
+    </div>
+    <div class="status"><span></span> Synthetic demo · No production data</div>
+  </header>
+
+  <main class="layout">
+    <section class="panel workspace">
+      <div class="panel-head">
+        <div><h2>Customer Service Executive Workspace</h2><p>Ask about an order, payment, pickup, shipment, ETA, invoice, or recover an unknown order number.</p></div>
+        <button id="resetBtn" class="ghost">Reset demo</button>
+      </div>
+
+      <div class="suggestions">
+        <button data-q="I ordered a Samsung monitor and keyboard last week but I don't know my order number.">Recover order number</button>
+        <button data-q="Has payment for order TVC-483921 been registered?">Check payment</button>
+        <button data-q="Can the customer pick up TVC-483921 today?">Check pickup</button>
+        <button data-q="Where is order TVC-392187 and when will it arrive?">Delivery ETA</button>
+        <button data-q="Send the invoice for TVC-392187.">Send invoice</button>
+      </div>
+
+      <div class="chat" id="chat" aria-live="polite"></div>
+
+      <form id="chatForm" class="composer">
+        <input id="query" autocomplete="off" placeholder="Ask the agent…" aria-label="Message" />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <aside class="rightcol">
+      <section class="panel">
+        <div class="panel-head compact"><div><h2>Governance Console</h2><p>What the agent is allowed to do.</p></div></div>
+        <div class="controls">
+          <div><span>Role</span><strong>Customer Service Executive</strong></div>
+          <div><span>Identity</span><strong id="identityState" class="tag warn">Not verified</strong></div>
+          <div><span>Disclosure</span><strong id="disclosureState" class="tag">Restricted</strong></div>
+          <div><span>Human review</span><strong class="tag ok">Enabled</strong></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head compact"><div><h2>Tool Trace</h2><p>Approved deterministic services invoked by the agent.</p></div></div>
+        <div id="tools" class="trace"><div class="empty">No tools invoked yet.</div></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head compact"><div><h2>Outcome KPIs</h2></div></div>
+        <div class="kpis">
+          <div><span>Baseline</span><strong>~4 days</strong><small>service resolution</small></div>
+          <div><span>Target</span><strong>Same day</strong><small>service resolution</small></div>
+          <div><span>Disclosure incidents</span><strong>0</strong><small>target</small></div>
+          <div><span>Agent model</span><strong>HITL</strong><small>human-in-the-loop</small></div>
+        </div>
+      </section>
+    </aside>
+
+    <section class="panel audit-panel">
+      <div class="panel-head compact"><div><h2>Audit Log</h2><p>Demo event trail for agent decisions, verification, tool calls, and escalations.</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Time</th><th>Event</th><th>Resource</th><th>Result</th></tr></thead><tbody id="audit"></tbody></table></div>
+    </section>
+  </main>
+
+  <dialog id="otpDialog">
+    <form method="dialog" id="otpForm">
+      <h3>Identity verification</h3>
+      <p>A simulated one-time code was sent to the registered contact channel.</p>
+      <div class="demo-code">Demo OTP: <strong>246810</strong></div>
+      <label>Enter OTP<input id="otpInput" inputmode="numeric" autocomplete="one-time-code" /></label>
+      <div id="otpError" class="error"></div>
+      <div class="dialog-actions"><button value="cancel" class="ghost">Cancel</button><button id="verifyOtp" value="default">Verify</button></div>
+    </form>
+  </dialog>
+
+  <footer>Portfolio demonstration · Synthetic data only · AI4GOOD México / Basilio Karamanos</footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
