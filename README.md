@@ -6,6 +6,8 @@
 
 ## Live demo
 
+**Custom domain:** https://order-agent.ai4good.mx/
+
 This repository includes a **zero-cost GitHub Pages demo** that uses synthetic data and simulated enterprise tools. It intentionally does **not** expose real customer data, credentials, payment data, or carrier accounts.
 
 The public demo showcases:
